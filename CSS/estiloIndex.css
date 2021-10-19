@@ -1,0 +1,234 @@
+body {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header {
+    z-index: 2;
+    width: 100%;
+    height: 80px;
+    background-color: hsl(42, 71%, 80%);
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.nav-menu {
+    margin-left: 50px;
+    margin-right: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-menu-lista-item {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    
+    list-style-type: none;
+    
+    height: 0;
+    width: 110px;
+    
+    position: static;
+    background-color: #B66F61;
+    transition: all 1s;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.nav-menu-lista {
+    margin: 0;
+    padding: 0;
+    border: 0;
+
+    list-style-type: none;
+    
+    height: 0;
+    width: 120px;
+    
+    display: flex;
+    flex-direction: column;
+    z-index: 4;
+
+    position: fixed;
+    top: 80px;
+    background-color: #B66F61;
+    transition: all 1s;
+    border-radius: 10px;
+    text-align: center;
+    right: 0;
+}
+
+.btn-acceso {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    
+    height: 0;
+    width: 110px;
+    
+    display: block;
+    text-align: center;
+    
+    border-radius: 5px;
+
+    background: transparent;
+    border-color: transparent;
+}
+
+.btn-acceso:hover {
+    background: #AD662A;
+    border-color: transparent;
+    color:hsl(42, 71%, 80%);
+}
+
+.nav-menu-burger {
+    color: #891244;
+    background: transparent;
+    border: none;
+    font-size: 30px;
+    line-height: 80px;
+    padding: 0 20px ;
+    cursor: pointer;
+}
+
+.enlace-acceso {
+    height: 0;
+    width: 110px;
+    text-decoration: none;
+    font-size: 0;
+    color: #F0DAA7;
+    transition: step-start 1s;
+}
+
+#check {
+    display: none;
+}
+
+
+#check:checked ~.nav-menu-lista {
+    height: 64px;
+    width: 120px;
+    padding: 5px;
+}
+
+#check:checked ~.nav-menu-lista li {
+    height: 27px;
+}
+
+#check:checked ~.nav-menu-lista li button {
+    height: 27px;
+}
+
+#check:checked ~.nav-menu-lista li button a {
+    transition: step-end 1s;
+    height: 27px;
+    font-size: 18px;
+}
+
+.cuerpo_registro {
+    background: linear-gradient(rgb(36, 19, 19) 15%,#B66F61);
+    background-attachment: fixed;
+}
+
+#form-registro {
+
+    font-family: Arial;
+    background-color: #f5e7e0;    
+    margin: auto;
+    border-radius: 25px;
+    width: 350px;    
+}
+
+#titulo {
+    
+    text-align: center;
+    color: #891244;
+    line-height: 60px;
+    height: 60px;
+    border-radius: 25px;
+    background-color: hsl(42, 71%, 80%);
+    
+}
+
+.elementos {
+    padding-left: 15px;
+}
+
+.boton {
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+#btn-submit-form {
+    font-size: 15px;
+    background-color: #AD662A;
+    color:hsl(42, 71%, 80%);
+    padding: 0.5rem;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+@media only screen and (max-width: 460px) {
+    
+    .nav-menu-lista {
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nav-menu-lista li {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #check:checked~.nav-menu-lista {
+        height: 70vh;
+        width: 100vw;
+        border-radius: 0;
+    }
+
+}
+
+#carouselExampleSlidesOnly {
+    margin-top: 80px;
+    width: 100%;
+    background: linear-gradient(#F3B465, #B66F61) !important;
+}
+
+.carousel-item img {
+    z-index: 1;
+    height: 500px;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#pantalla {
+    position: absolute;
+    top: 80px;
+
+    height: 500px;
+    width: 100%;
+    background:  linear-gradient( rgba(102, 102, 102, 0.5), rgba(102, 102, 102, 0.8) ) !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#pantalla span#title {
+    font-family: 'Gentium Basic', serif;
+    font-size: 6rem;
+    color: #891244;
+}
+
+#pantalla span#subtitle {
+    font-family: 'Gentium Basic', serif;
+    font-size: 2rem;
+    color: #891244;
+}

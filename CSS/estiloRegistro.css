@@ -1,0 +1,94 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: url(../Multimedia/cafe3.jpg) no-repeat center top;
+    background-size: cover;
+    font-family: sans-serif;
+    height: 100vh;
+}
+.cajaLogin{
+    width: 320px;
+    height: 560px;
+    background: linear-gradient(rgba(240, 218, 169, 0.8) 3%,#F3B465);
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform:translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+    border-radius: 25px;
+}
+.cajaLogin .logo{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 50px);
+    
+}
+.cajaLogin h1{
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 25px;
+}
+.cajaLogin label{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    display: block;
+    font-size: 15px;
+}
+.cajaLogin .row {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+.cajaLogin input {
+    width: 100%;
+    margin-bottom: 10px;
+}
+.cajaLogin input[type="radio"] {
+    width: auto;
+    margin-bottom: auto;
+    margin-top: auto;
+}
+.cajaLogin input[type="text"], .cajaLogin input[type="password"],.cajaLogin input[type="email"], .cajaLogin input[type="tel"] {
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 30px;
+    color: #fff;
+    font-size: 16px;
+}
+.cajaLogin input[type="button"] {
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #B66F61;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+}
+.cajaLogin input[type="button"]:hover {
+    cursor: pointer;
+    background: #FADF87;
+    color: #000;
+}
+.cajaLogin a {
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: darkgrey;
+}
+
+.cajaLogin a:hover {
+    color: #000;
+}
+
+.error {
+    border-width: 2px !important;
+    border-color: red !important;
+}
