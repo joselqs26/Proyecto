@@ -13,7 +13,6 @@ async function login() {
         if (result.res) {
 
             let usuario = result.users.filter(element => (element.Correo == correo));
-            console.log(usuario);
 
             if (usuario.length !== 0) {
 
@@ -76,7 +75,6 @@ async function buscarUsuarios() {
             'Access-Control-Allow-Origin': '*'
         }
     }).then(res => res.json()).then(data => {
-        console.log(data)
         resultado = {
             res: true,
             users: data
