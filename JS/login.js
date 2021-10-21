@@ -26,7 +26,7 @@ async function login() {
                         document.getElementById("contrasena").classList.remove('error');
 
                         alert("Login exitoso :D");
-                        window.location.href = "";
+                        window.location.href = "/Proyecto/";
 
                     } else {
                         document.getElementById("contrasena").classList.add('error');

@@ -79,7 +79,7 @@ async function registrar() {
         let result = await agregarRegistro(usuario);
         if (result.res) {
             alert("Registro exitoso :D");
-            window.location.href = "";
+            window.location.href = "/Proyecto/";
         } else {
             alert(`${nombre} ocurrio un error, ${result.msg}`);
         }
