@@ -4,27 +4,27 @@ async function agregarRegistro(usuario) {
     registros.push(usuario);
     let resultado;
     await fetch(`${API}/personas`, {
-            method: 'POST', // or 'PUT'
-            body: JSON.stringify(usuario) , // data can be `string` or {object}!
-            headers:{
-                'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': '*'
+        method: 'POST', // or 'PUT'
+        body: JSON.stringify(usuario), // data can be `string` or {object}!
+        headers: {
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*'
+        }
+    }).then(res => res.json()).then(data => {
+        resultado = {
+            res: true,
+            user: {
+                id: data.id,
+                nombre: data.nombre
             }
-        }).then(res=>res.json()).then(data=>{
-                resultado={
-                    res:true,
-                    user:{
-                        id:data.id,
-                        nombre:data.nombre
-                    }
-                }
-            }).catch((error)=>{
-        resultado={
-            res:false, 
-            msg:error
+        }
+    }).catch((error) => {
+        resultado = {
+            res: false,
+            msg: error
         }
     });
-    console.log( resultado );
+    console.log(resultado);
     return resultado;
 }
 
@@ -66,7 +66,7 @@ async function registrar() {
     let correo = checkCorreo(document.getElementById("correo"));
     let contrasena = checkContrasena(document.getElementById("contrasena"));
 
-    if( nombre!=null  && genero!=null && telefono!=null && direccion!=null && correo!=null && contrasena!=null ){
+    if (nombre != null && genero != null && telefono != null && direccion != null && correo != null && contrasena != null) {
         let usuario = {
             nombre: nombre,
             genero: genero,
@@ -78,58 +78,58 @@ async function registrar() {
 
         let result = await agregarRegistro(usuario);
         if (result.res) {
-            alert( "Registro exitoso :D" );
-            window.location.href = "index.html";
+            alert("Registro exitoso :D");
+            window.location.href = "";
         } else {
             alert(`${nombre} ocurrio un error, ${result.msg}`);
         }
     }
 }
 
-function checkNombre(elemento){
-	if(/^[a-zA-ZÀ-ÿ\s]{4,30}$/.test(elemento.value)){
-        
+function checkNombre(elemento) {
+    if (/^[a-zA-ZÀ-ÿ\s]{4,30}$/.test(elemento.value)) {
+
         elemento.classList.remove('error');
         return elemento.value;
-	}else{
+    } else {
         elemento.classList.add('error');
-		return null;
-	}
+        return null;
+    }
 }
-function checkGenero(name){
-    let radio = document.body.querySelector('input[name="'+name+'"][type="radio"]:checked');
-    if (radio!=null) {
-        
+function checkGenero(name) {
+    let radio = document.body.querySelector('input[name="' + name + '"][type="radio"]:checked');
+    if (radio != null) {
+
         radio.parentElement.classList.remove('error');
         return radio.value;
-    }else{
-        let radio = document.body.querySelector('input[name="'+name+'"][type="radio"]');
+    } else {
+        let radio = document.body.querySelector('input[name="' + name + '"][type="radio"]');
         radio.parentElement.classList.add('error');
         return null;
     }
 }
-function checkTelefono(elemento){
-	if(/^[0-9]{7,7}$/.test(telefono.value)){
-        
+function checkTelefono(elemento) {
+    if (/^[0-9]{7,7}$/.test(telefono.value)) {
+
         elemento.classList.remove('error');
         return elemento.value;
-	}else{
+    } else {
         elemento.classList.add('error');
-		return null;
-	}
+        return null;
+    }
 }
 
 function checkContrasena(elemento) {
     let valor = elemento.value;
-    const minusculas = new RegExp( "[a-z]" , "g" );
-    const mayusculas = new RegExp( "[A-Z]" , "g" );
-    const numeros = new RegExp( "[0-9]" , "g" );
+    const minusculas = new RegExp("[a-z]", "g");
+    const mayusculas = new RegExp("[A-Z]", "g");
+    const numeros = new RegExp("[0-9]", "g");
 
-    if ( valor.length >= 8 && valor.match( minusculas)!=null && valor.match( mayusculas)!=null && valor.match( numeros)) {  
-        
+    if (valor.length >= 8 && valor.match(minusculas) != null && valor.match(mayusculas) != null && valor.match(numeros)) {
+
         elemento.classList.remove('error');
         return elemento.value;
-    }else{
+    } else {
         elemento.classList.add('error');
         return null;
     }
@@ -137,23 +137,23 @@ function checkContrasena(elemento) {
 
 function checkDir(elemento) {
     let direccion = elemento.value;
-    if (direccion!='' && direccion.length<=50 && /[a-zA-Z0-9\s_.+-]+#[a-zA-Z0-9\s_.+-]/.test(direccion)){
-        
+    if (direccion != '' && direccion.length <= 50 && /[a-zA-Z0-9\s_.+-]+#[a-zA-Z0-9\s_.+-]/.test(direccion)) {
+
         elemento.classList.remove('error');
         return elemento.value;
-    }else{
+    } else {
         elemento.classList.add('error');
         return null;
     }
 }
 
 function checkCorreo(elemento) {
-    if (/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(elemento.value)){
-        
+    if (/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(elemento.value)) {
+
         elemento.classList.remove('error');
         return elemento.value;
     } else {
         elemento.classList.add('error');
         return null;
-    }  
+    }
 }
