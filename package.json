@@ -1,6 +1,0 @@
-{
-    "scripts": {
-        "parcel:server": "parcel ./src/HTML/index.html --open",
-        "parcel:build": "parcel build index.html"
-    }
-}
