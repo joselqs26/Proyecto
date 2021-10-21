@@ -71,7 +71,10 @@ async function login() {
 async function buscarUsuarios() {
     let resultado;
     await fetch(`${API}/personas`, {
-        method: 'GET'
+        method: 'GET', // data can be `string` or {object}!
+        headers: {
+            'Access-Control-Allow-Origin': '*'
+        }
     }).then(res => res.json()).then(data => {
         console.log(data)
         resultado = {
