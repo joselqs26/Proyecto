@@ -157,5 +157,3 @@ function checkCorreo(elemento) {
         return null;
     }  
 }
-
-module.exports = registrar;
