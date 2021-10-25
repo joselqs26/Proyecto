@@ -1,0 +1,120 @@
+body {
+    background-color: #F0E2DB !important;
+}
+
+.contenedor {
+    margin-left: auto;
+    margin-right: auto;
+    margin-block-start: 10px;
+    margin-block-end: 10px;
+}
+
+.form-floating {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.img-thumbnail {
+    width: 100px;
+    height: auto;
+    border: none !important;
+    padding: 0 !important;
+}
+
+.botones {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-around;
+}
+
+select, textarea {
+    font-family: 'Nunito', sans-serif !important;
+    background-color: #F0DAA7 !important;
+    border: none !important;
+}
+
+.form-control {
+    font-family: 'Nunito', sans-serif !important;
+    background-color: #F0DAA7 !important;
+    border: none !important;
+}
+
+input:focus, select:focus, textarea:focus {
+    box-shadow: none !important;
+}
+
+label[for="floatingSelectGrid"] {
+    opacity: 1 !important;
+}
+
+thead , label {
+    font-family: 'Gentium Basic', serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #891244;
+}
+
+tbody > tr {
+    font-family: 'Nunito', sans-serif;
+    border-color: #F0E2DB;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.boton-control {
+    background-color: #B66F61 !important;
+    font-family: 'Nunito', sans-serif;
+    color: #FADF87 !important;
+    border-color: #B66F61 !important;
+    
+}
+
+.boton-control:focus {
+    box-shadow: 0 0 0 0.25rem rgb(182 111 97 / 50%) !important;
+}
+
+.table-striped>tbody>tr:nth-of-type(odd)>* {
+    --bs-table-accent-bg: #B6688B !important;
+    color: #FADF87 !important;
+}
+
+span#title {
+    display: block;
+
+    margin-right: auto;
+    margin-left: auto;
+
+    font-family: 'Gentium Basic', serif;
+    font-size: 6rem;
+    color: #891244;
+    text-align: center;
+}
+
+.modal-content {
+    background-color: #9b3360 !important;
+}
+
+.modal-title {
+    font-family: 'Gentium Basic', serif;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    color: #FADF87;
+}
+
+@media only screen and (max-width: 992px) {
+    .boton-panel {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+.error {
+    color: #D51212 !important;
+}
+
+.desaparecer {
+    display: none !important;
+}

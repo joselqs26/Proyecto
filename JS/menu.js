@@ -83,8 +83,6 @@ async function visualizarProductos() {
     const peticion = await getProductos();
     let elementoCuadricula = document.getElementById('cuadricula');
 
-    console.log(cuadricula);
-
     if (peticion.res) {
         console.log(peticion.users);
         listaDeProductos = peticion.users;
@@ -105,27 +103,4 @@ async function visualizarProductos() {
         console.log("Error: " + peticion.msg);
     }
 
-    /*
-    const personajes = await peticion.json();
-    console.log(personajes);
-
-    let i = 0;
-
-    personajes.forEach(element => {
-
-        let card = "<div class='card' style='width: 18rem'>";
-        card += "<img id='" + i + "' src='" + element.PicUrl + "' class='card-img-top' alt='' />";
-        card += "<div class='card-body'>";
-        card += "<h5 class='card-title'>" + element.Name + "</h5>";
-        card += "<p class='card-text'>" + element.Profession + "</p>";
-        card += "</div></div>";
-
-        let contendor = document.getElementById("contenedorPersonajes");
-
-        contendor.innerHTML += card;
-
-        i++;
-
-    });
-    */
 }
